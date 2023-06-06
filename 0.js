@@ -2381,7 +2381,7 @@ function refind_jifen() {
   var a = className("android.widget.ListView").filter(function (b) {
     return 10 < b.rowCount()
   }).findOne();
-  21 == a.depth() ? (jifen_flag = "old", fInfo("检测为旧版界面")) : 24 == a.depth() && (jifen_flag = 0 < a.child(1).child(3).childCount() ? "new1" : "new2", fInfo("检测为新版界面"));
+  21 == a.depth() ? (jifen_flag = "old", fInfo("检测为旧版界面")) : 24 == a.depth() && (jifen_flag = 0 < a.child(0).child(3).childCount() ? "new1" : "new2", fInfo("检测为新版界面"));
   return a
 }
 
