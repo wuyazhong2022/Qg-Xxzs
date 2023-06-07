@@ -203,7 +203,7 @@ try {
   dati_tiku = get_tiku_by_ct('https://webapi.ctfile.com/get_file_url.php?uid=35157972&fid=555754562&file_chk=94c3c662ba28f583d2128a1eb9d78af4&app=0&acheck=2&rd=0.14725283060014105');
 }
 // 设置资源保存路径
-files.createWithDirs("/sdcard/天天向上/");
+files.createWithDirs("/sdcard/学习助手/");
 // 调整音量
 if (yl_on) {
   fInfo("设置媒体音量");
@@ -2272,7 +2272,7 @@ function send_pushplus(token, sign_list) {
   content_str += '</div>' + style_str;
   let r = http.postJson("http://www.pushplus.plus/send", {
     token: token,
-    title: "天天向上：" + name,
+    title: "学习助手：" + name,
     content: content_str + "</div><style>.item{height:1.5em;line-height:1.5em;}.item span{display:inline-block;padding-left:0.4em;}.item .bar{width:100px;height:10px;background-color:#ddd;border-radius:5px;display:inline-block;}.item .bar div{height:10px;background-color:#ed4e45;border-radius:5px;}</style>",
     template: "markdown",
   });
@@ -2297,7 +2297,7 @@ function send_email(email) {
     action: "SENDTO"
   });
   data.setData(app.parseUri("mailto:" + e_addr));
-  data.putExtra(Intent.EXTRA_SUBJECT, "天天向上：" + name);
+  data.putExtra(Intent.EXTRA_SUBJECT, "学习助手：" + name);
   data.putExtra(Intent.EXTRA_TEXT, content);
   app.startActivity(data);
   return true;
@@ -2431,7 +2431,7 @@ function fInit() {
     <card cardCornerRadius='8dp' alpha="0.8">
       <vertical>
         <horizontal bg='#FF000000' padding='10 5'>
-        <text id='version' textColor="#FFFFFF" textSize="18dip">天天向上+</text>
+        <text id='version' textColor="#FFFFFF" textSize="18dip">学习助手+</text>
         <text id='title' h="*" textColor="#FFFFFF" textSize="13dip" layout_weight="1" gravity="top|right"></text>
         </horizontal>
         <ScrollView>
@@ -2445,7 +2445,7 @@ function fInit() {
   );
   ui.run(function () {
     //w.title.setFocusable(true);
-    w.version.setText("天天向上+" + newest_version);
+    w.version.setText("学习助手+" + newest_version);
   });
   w.setSize(720, -2);
   w.setPosition(10, 10);
