@@ -2383,7 +2383,7 @@ function refind_jifen() {
   }).findOne();
     console.log("a=" + a)
   21 == a.depth() ? (jifen_flag = "old", fInfo("检测为旧版界面")) : 23 == a.depth() && (jifen_flag = 0 < a.child(1).child(2).childCount() ? "new1" : "new2", fInfo("检测为新版界面"));
-  console.log(a.depth() && (jifen_flag = 0 < a.child(1).child(2).childCount() ? "new1" : "new2")
+//   console.log(a.depth() && (jifen_flag = 0 < a.child(1).child(2).childCount() ? "new1" : "new2")
   return a
 }
 
