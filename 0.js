@@ -126,7 +126,7 @@ var engine_version = "V12.5";
 var newest_version = "V12.5";
 if (storage.get(engine_version, true)) {
   storage.remove(last_version);
-  let gengxin_rows = "脚本有风险，仅供学习交流;更新内容：;1.修复积分获取;2.趣味答题目前没有修复;3.除每日答题可以正常使用，其他都在配置关闭，等修复在启用。;4.脚本测试环境：强国V2.46.0;（点击取消不再提示）".split(";");
+  let gengxin_rows = "脚本有风险，仅供学习交流;更新内容：;1.修复积分获取;2.趣味答题目前没有修复;3.除每日答题可以正常使用，其他都在配置关闭，等修复在启用。;4.脚本测试环境：强国更新到最新V2.46.0;（点击取消不再提示）".split(";");
   let is_show = confirm(engine_version + "版更新内容", gengxin_rows.join("\n"));
   if (!is_show) {
     storage.put(engine_version, false);
@@ -184,7 +184,7 @@ fInfo("设置屏幕常亮");
 device.keepScreenOn(3600 * 1000);
 // 下载题库
 fInfo("检测题库更新");
-const update_info = get_tiku_by_http("https://gitcode.net/m0_67945136/qgxxzs-tiku/-/raw/master/tiku_json_20230518.txt");
+const update_info = get_tiku_by_http("https://gitcode.net/m0_67945136/qgxxzs-tiku/-/raw/master/info.json");
 fInfo("正在加载对战题库......请稍等\n题库版本:" + update_info["tiku_version"]);
 fInfo("如果不动就是正在下载，多等会");
 var tiku = [];
@@ -2382,7 +2382,7 @@ function refind_jifen() {
     return 8 < b.rowCount()
   }).findOne();
     //console.log("a=" + a)
-  21 == a.depth() ? (jifen_flag = "old", fInfo("检测为旧版界面")) : 23 == a.depth() && (jifen_flag = 0 < a.child(1).child(2).childCount() ? "new1" : "new2", fInfo("检测为新版界面"));
+  10 == a.depth() ? (jifen_flag = "old", fInfo("检测为旧版界面")) : 23 == a.depth() && (jifen_flag = 0 < a.child(1).child(2).childCount() ? "new1" : "new2", fInfo("检测为新版界面"));
 //   console.log(a.depth() && (jifen_flag = 0 < a.child(1).child(2).childCount() ? "new1" : "new2")
   return a
 }
