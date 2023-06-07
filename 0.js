@@ -126,16 +126,16 @@ var engine_version = "V12.3";
 var newest_version = "V12.5";
 if (storage.get(engine_version, true)) {
   storage.remove(last_version);
-  let gengxin_rows = "脚本有风险1，仅供学习交流;更新内容：;1.原脚本会进入“我的”界面获取用户名，区分历史刷过文章，现取消此设定;2.可自定义滑动验证界面震动提醒时间;3.禁止截屏会随机选一个选项;4.自定义评论内容;脚本测试环境：强国V2.46.0;联系方式：tg: t.me/wyqg_ttxs;（点击取消不再提示）".split(";");
+  let gengxin_rows = "脚本有风险，仅供学习交流;更新内容：;1.修复积分获取;2.趣味答题目前没有修复;3.除每日答题可以正常使用，其他都在配置关闭，等修复在启用。;4.脚本测试环境：强国V2.46.0;（点击取消不再提示）".split(";");
   let is_show = confirm(engine_version + "版更新内容", gengxin_rows.join("\n"));
   if (!is_show) {
     storage.put(engine_version, false);
   }
 }
 var w = fInit();
-// console.setTitle("天天向上");
+// console.setTitle("学习助手");
 // console.show();
-fInfo("天天向上Pro" + newest_version + "脚本初始化");
+fInfo("学习助手Pro" + newest_version + "脚本初始化");
 // 初始化宽高
 var [device_w, device_h] = init_wh();
 // log("fina:", device_w, device_h);
@@ -2381,7 +2381,7 @@ function refind_jifen() {
   var a = className("android.widget.ListView").filter(function (b) {
     return 8 < b.rowCount()
   }).findOne();
-    console.log("a=" + a)
+    //console.log("a=" + a)
   21 == a.depth() ? (jifen_flag = "old", fInfo("检测为旧版界面")) : 23 == a.depth() && (jifen_flag = 0 < a.child(1).child(2).childCount() ? "new1" : "new2", fInfo("检测为新版界面"));
 //   console.log(a.depth() && (jifen_flag = 0 < a.child(1).child(2).childCount() ? "new1" : "new2")
   return a
