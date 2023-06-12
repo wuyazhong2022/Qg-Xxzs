@@ -3131,7 +3131,7 @@ function do_siren() {
 
 function do_quweidati() {
     entry_jifen_project("趣味答题");
-    sleep(3000)
+    sleep(1500)
 
     // 查找控件
     var startBtn = text("开始对战").findOne(2000);
