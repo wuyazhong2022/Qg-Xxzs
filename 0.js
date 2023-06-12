@@ -126,7 +126,7 @@ var engine_version = "V12.3";
 var newest_version = "V12.4";
 if (storage.get(engine_version, true)) {
     storage.remove(last_version);
-        let gengxin_rows = "脚本有风险，仅供学习交流;更新内容：;1.原脚本会进入“我的”界面获取用户名，区分历史刷过文章，现取消此设定;2.可自定义滑动验证界面震动提醒时间;3.禁止截屏会随机选一个选项;4.自定义评论内容;脚本测试环境：强国V2.45.0;联系方式：tg: t.me/wyqg_ttxs;（点击取消不再提示）".split(";");
+        let gengxin_rows = "脚本有风险，仅供学习交流;更新内容：;1.原脚本会进入“我的”界面获取用户名，区分历史刷过文章，现取消此设定;2.可自定义滑动验证界面震动提醒时间;3.禁止截屏会随机选一个选项;4.自定义评论内容;5.趣味答题有时间再更新修复；脚本测试环境：强国V2.46.0；（点击取消不再提示）".split(";");
     let is_show = confirm(engine_version + "版更新内容", gengxin_rows.join("\n"));
     if (!is_show) {
         storage.put(engine_version, false);
