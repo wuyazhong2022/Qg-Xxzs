@@ -818,7 +818,7 @@ function do_tiaozhan() {
         className("android.widget.Image").textStartsWith("chanllenge").waitFor()
     }
     var total = 0,
-        max_total = 5;
+        max_total = 3;
     for (ddtong && (max_total += 3);;) {
         fClear();
         fInfo("第" + (total + 1) + "题");
@@ -882,20 +882,16 @@ function do_tiaozhan() {
             sleep(5000);
             click("结束本局");
             text("再来一局").waitFor();
-            if (total < 1) {
-               fInfo("答错重试");
-                console.warn("warn:", que_txt);
-               text("再来一局").findOne().click();
-            } else {
-                // 退出
-                a && (back(), textStartsWith("total").waitFor(), sleep(2000)), back(),
-                    text("登录").waitFor();
-                ran_sleep();
-                return true;
-            }
-            total = 0;
-            sleep(2000);
-            continue;
+            
+            sleep(3000);
+            back ();
+            
+             a && (back(), textStartsWith("total").waitFor(), sleep(2000)), back(),
+            text("登录").waitFor();
+            ran_sleep();
+            return true;
+             
+            
         }
         // 没答错总数加1
         total += 1;
