@@ -158,7 +158,7 @@ ui.layout(
                             <horizontal  gravity="center_vertical" padding="5 5" >
                                 <View bg="#FF6600" h="*" w="10"  ></View>
                                 <vertical padding="10 8" h="auto" w="0" layout_weight="1">
-                                    <text w="auto" textColor="#222222" textSize="15sp" text="挑战答题" />
+                                    <text w="auto" textColor="#222222" textSize="15sp" text="quweidati答题" />
                                 </vertical>
                                 <checkbox id="ttxs_pro_tiaozhan" marginLeft="4" marginRight="6" checked="true" />
                             </horizontal>
@@ -300,7 +300,7 @@ var thread = null;
 Initialize();
 
 // 版本更新检查
-var apkurl = "https://github.com/wuyazhong2022/Qg-Xxzs/releases/download/untagged-36c1da09e3947d942884/_2.2.3.apk";
+var apkurl = "https://github.com/wuyazhong2022/Qg-Xxzs/releases/download/v2.2.3/v2.2.3.apk";
 var latest_version = "2.2.3";
 if (GLOBAL_CONFIG.get("NO_UPDATE", 0) && (app.versionName != latest_version)) {
     ui.update.visibility = 0;
@@ -314,7 +314,7 @@ if (GLOBAL_CONFIG.get("NO_UPDATE", 0) && (app.versionName != latest_version)) {
 ui.emitter.on("create_options_menu", menu => {
     menu.add("日志");
     menu.add("关于");
-    menu.add("结贝号资源网");
+    menu.add("留言私信");
     //menu.add("V2.33.0下载");
 });
 
@@ -327,7 +327,7 @@ ui.emitter.on("options_item_selected", (e, item) => {
         case "关于":
             alert("关于", "学习助手 v" + latest_version);
             break;
-        case "结贝号资源网":
+        case "留言私信":
             app.openUrl("https://www.jiebeih.top/1251.html");
             break;
         
@@ -652,10 +652,9 @@ function startDownload(url) {
 
 function getScript(choice) {
     let url_prefix = [
-        //'https://v.sec-an-cf.top/gh/raw/sec-an/Better-Auto-XXQG/main/',
+        
         'https://gh-proxy.com/https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/',
         "https://ghproxy.com/https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/",
-       // 'https://cdn.jsdelivr.net/gh/sec-an/Better-Auto-XXQG@main/',
         'https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/',
     ];
     for (var i = 0; i < url_prefix.length; i++) {
