@@ -890,7 +890,7 @@ function do_tiaozhan() {
                     text("登录").waitFor();
                 ran_sleep();
                 return true;
-            }
+//             }
             total = 0;
             sleep(2000);
             continue;
