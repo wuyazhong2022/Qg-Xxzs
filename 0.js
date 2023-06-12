@@ -819,7 +819,7 @@ function do_tiaozhan() {
     }
     var total = 0,
         max_total = 5;
-    for (ddtong && (max_total += 10);;) {
+    for (ddtong && (max_total += 3);;) {
         fClear();
         fInfo("第" + (total + 1) + "题");
         className("android.widget.ListView").waitFor();
@@ -843,6 +843,7 @@ function do_tiaozhan() {
         if (total >= max_total) {
             // 题数数够了随便选
             fInfo("已答对" + max_total + "题，全选A");
+            ran_sleep1()
             xuan_list[0].child(0).click();
         } else if (ans_list.length != 0) {
             let max_simi = 0;
@@ -863,6 +864,7 @@ function do_tiaozhan() {
             if (xuanxiang != null) {
                 fInfo("最终：" + xuanxiang.child(1).text());
                 xuanxiang.click();
+                ran_sleep1()
             } else {
                 fInfo("无匹配答案");
                 xuan_list[0].child(0).click();
@@ -880,24 +882,29 @@ function do_tiaozhan() {
             sleep(5000);
             click("结束本局");
             text("再来一局").waitFor();
-            //if (total < 5) {
-               // fInfo("答错重试");
-                //console.warn("warn:", que_txt);
-               // text("再来一局").findOne().click();
-            //} else {
+            if (total < 1) {
+               fInfo("答错重试");
+                console.warn("warn:", que_txt);
+               text("再来一局").findOne().click();
+            } else {
                 // 退出
                 a && (back(), textStartsWith("total").waitFor(), sleep(2000)), back(),
                     text("登录").waitFor();
                 ran_sleep();
                 return true;
-//             }
+            }
             total = 0;
             sleep(2000);
             continue;
         }
         // 没答错总数加1
-//         total += 1;
+        total += 1;
     }
+}
+
+// 模拟随机时间15-20秒，后期可以用户自定义
+function ran_sleep1() {
+return sleep(random(15000, 20000));
 }
 
 /********双人、四人赛*********/
