@@ -880,11 +880,11 @@ function do_tiaozhan() {
             sleep(5000);
             click("结束本局");
             text("再来一局").waitFor();
-            if (total < 5) {
-                fInfo("答错重试");
-                console.warn("warn:", que_txt);
-                text("再来一局").findOne().click();
-            } else {
+            //if (total < 5) {
+               // fInfo("答错重试");
+                //console.warn("warn:", que_txt);
+               // text("再来一局").findOne().click();
+            //} else {
                 // 退出
                 a && (back(), textStartsWith("total").waitFor(), sleep(2000)), back(),
                     text("登录").waitFor();
@@ -896,7 +896,7 @@ function do_tiaozhan() {
             continue;
         }
         // 没答错总数加1
-        total += 1;
+//         total += 1;
     }
 }
 
