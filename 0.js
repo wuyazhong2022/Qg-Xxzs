@@ -122,11 +122,11 @@ sleep(delay_time);
 var storage = storages.create('songgedodo');
 // 脚本版本号
 var last_version = "V12.0";
-var engine_version = "V12.3";
+var engine_version = "V12.5";
 var newest_version = "V12.5";
 if (storage.get(engine_version, true)) {
     storage.remove(last_version);
-        let gengxin_rows = "脚本有风险，仅供学习交流;更新内容：;1.原脚本会进入“我的”界面获取用户名，区分历史刷过文章，现取消此设定;2.可自定义滑动验证界面震动提醒时间;3.禁止截屏会随机选一个选项;4.自定义评论内容;5.趣味答题有时间再更新修复；脚本测试环境：强国V2.46.0；（点击取消不再提示）".split(";");
+        let gengxin_rows = "脚本有风险，仅供学习交流;更新内容：;1.自启动强国改为手动打开强国app防检测，;2.可自定义滑动验证界面震动提醒时间;3.自定义评论内容;4.趣味答题已修复；脚本测试环境：强国V2.46.0；（点击取消不再提示）".split(";");
     let is_show = confirm(engine_version + "版更新内容", gengxin_rows.join("\n"));
     if (!is_show) {
         storage.put(engine_version, false);
@@ -229,10 +229,21 @@ var nolocate_thread = threads.start(function() {
     text("暂不开启").findOne().click();
     fInfo("已关闭定位");
 });
-fInfo("跳转学习APP");
-// launch('cn.xuexi.android');
-app.launchApp('学习强国');
+fInfo("请手动打开进去学习强国主页");
 sleep(2000);
+fInfo("请手动打开进去学习强国主页");
+sleep(2000);
+fInfo("请手动打开进去学习强国主页");
+sleep(2000);
+fInfo("请手动打开进去学习强国主页");
+sleep(2000);
+fInfo("请手动打开进去学习强国主页");
+sleep(2000);
+id("comm_head_xuexi_mine").waitFor()
+
+//app.launchApp('学习强国');
+sleep(3000);
+//sleep(2000);
 // console.hide();
 // 命令行方式启动，似乎需要root
 // var result_shell = shell("pm disable cn.xuexi.android");
