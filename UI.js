@@ -404,7 +404,7 @@ ui.log.click(function () {
 // APP更新检测
 ui.update.click(function () {
     if (app.versionName != latest_version) {
-        GLOBAL_CONFIG.put("NO_UPDATE", 1);
+        GLOBAL_CONFIG.put("NO_UPDATE", 0);
         checkversion();
     } else {
         toast("当前已经是最新版本！");
@@ -581,7 +581,7 @@ function check_baidu_api() {
 function checkversion() {
     var releaseNotes = "版本 v" + latest_version + "\n" +
         "更新日志:\n" +
-        "* \n" +
+        "*重新安装更新的版本 \n" +
         "* "
     dialogs.build({
             title: "发现新版本",
