@@ -1766,7 +1766,7 @@ function do_exec(type) {
     fInfo("答案：" + ans);
     // 返回退出查看提示界面
     back();
-    sleep(1000);
+    sleep(2500);
     return true;
 }
 
