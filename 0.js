@@ -2899,14 +2899,7 @@ function do_siren() {
                 que_img.recycle();
             }
         }
-        if (renshu == 0) {
-            fInfo("由于第一局匹配对手较强，正在挂机中。");
-            fInfo("经测试挂机不会扣积分局数，此功能可在配置中关闭");
-            fTips("请不要点击任何选项，不要作答！！！");
-            num++;
-            text("继续挑战").waitFor();
-            continue;
-        }
+        
         // 选项清洗标识
         var replace_sign = "default_ocr_replace";
         let question_reg = new RegExp(update_info["question_reg"], "gi");
