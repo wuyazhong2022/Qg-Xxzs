@@ -1573,6 +1573,7 @@ function do_bendi() {
 // 做一次题
 function do_exec(type) {
     // 等待加载
+    sleep(2000);
     let tishi = text("查看提示").findOne();
     //log(tishi);
     // 点击查看提示按钮
