@@ -1578,7 +1578,7 @@ function do_exec(type) {
     // 点击查看提示按钮
     tishi.click();
     // 随机延迟、等待提示
-    ran_sleep();
+    ran_sleep1();
     // 等待加载
     text("提示").waitFor();
 
