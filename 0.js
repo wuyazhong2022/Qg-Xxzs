@@ -129,7 +129,7 @@ if (storage.get(engine_version, true)) {
         let gengxin_rows = "脚本有风险，仅供学习交流;更新内容：;1.自启动强国改为手动打开强国app防检测，;2.趣味答题已修复；3.最新下载地址https://www.jiebeih.top/1778.html脚本测试环境：强国V2.46.0；（点击取消不再提示）".split(";");
     let is_show = confirm(engine_version + "版更新内容", gengxin_rows.join("\n"));
     if (!is_show) {
-        storage.put(engine_version, false);
+        storage.put(engine_version, true);
     }
 }
 var w = fInit();
