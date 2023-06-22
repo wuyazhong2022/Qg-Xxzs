@@ -3096,13 +3096,13 @@ function do_siren() {
                 let idx = idx_dict[right_xuan];
                 fInfo("最终:" + right_xuan);
                 try {
-                    sleep(15000);
+                    sleep(6000);
                     className("android.widget.RadioButton").findOnce(idx).parent().click();
                 } catch (e) {
                     idx = idx_dict[right_xuan2];
                     fInfo("备选:" + right_xuan2);
                     try {
-                        sleep(15000);
+                        sleep(randomDelay); // 延时执行代码
                         className("android.widget.RadioButton").findOnce(idx).parent().click();
                     } catch (e1) {
                         log("error3:", e1);
@@ -3116,7 +3116,7 @@ function do_siren() {
                 textMatches(/第.+题|继续挑战/).waitFor();
             } else {
                 try {
-                    sleep(15000);
+                    sleep(randomDelay); // 延时执行代码
                     className("android.widget.RadioButton").findOnce().parent().click();
                 } catch (e1) {
                     log("error4:", e1);
@@ -3135,7 +3135,9 @@ function do_siren() {
     }
 }
 
-
+var minDelay = 3000; // 最小延时时间为3秒
+var maxDelay = 5000; // 最大延时时间为5秒
+var randomDelay = Math.floor(Math.random() * (maxDelay - minDelay + 1) + minDelay); // 生成3-5之间的随机数，单位为毫秒
 
 
 //趣味答题3合一函数
