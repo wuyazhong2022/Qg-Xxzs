@@ -126,7 +126,7 @@ var engine_version = "V12.6";
 var newest_version = "V12.6";
 if (storage.get(engine_version, true)) {
     storage.remove(last_version);
-        let gengxin_rows = "脚本有风险，仅供学习交流;更新内容：;1.自启动强国改为手动打开强国app防检测，;2.趣味答题已修复，点击答案选项增加了随机延时；3.最新下载地址https://www.jiebeih.top/1778.html脚本测试环境：强国V2.46.0；（点击取消不再提示）".split(";");
+        let gengxin_rows = "脚本有风险，仅供学习交流;更新内容：1.趣味答题已修复，点击答案随机延时缩短了；2.私信https://www.jiebeih.top/author/1 ;3.脚本测试环境：强国V2.46.0；（点击取消不再提示）".split(";");
     let is_show = confirm(engine_version + "版更新内容", gengxin_rows.join("\n"));
     if (!is_show) {
         storage.put(engine_version, false);
@@ -228,21 +228,33 @@ var nolocate_thread = threads.start(function() {
     sleep(1000);
     text("暂不开启").findOne().click();
     fInfo("已关闭定位");
-});
-fInfo("请手动打开进去学习强国主页");
-sleep(2000);
-fInfo("请手动打开进去学习强国主页");
-sleep(2000);
-fInfo("请手动打开进去学习强国主页");
-sleep(2000);
-fInfo("请手动打开进去学习强国主页");
-sleep(2000);
-fInfo("请手动打开进去学习强国主页");
-sleep(2000);
-id("comm_head_xuexi_mine").waitFor()
 
-//app.launchApp('学习强国');
-sleep(3000);
+
+});
+
+// while (true) {
+//     // 检测是否打开学习强国主页
+//     var xuexi_mine = id("comm_head_xuexi_mine").exists();
+  
+//     // 判断是否找到了控件
+//     if (xuexi_mine) {
+//       // 找到了控件，结束循环
+//       fInfo("进入主页");
+//       break;
+//     } else {
+    
+//         fInfo("没有进入强国主页")
+//         fInfo("请手动打开进去学习强国主页");
+//         sleep(1500);
+//       // 没找到控件，进入进吧页面
+//       fClear();
+     
+//     }
+//     sleep(1000);
+    
+//   }
+app.launchApp('学习强国');
+sleep(1000);
 //sleep(2000);
 // console.hide();
 // 命令行方式启动，似乎需要root
@@ -911,7 +923,7 @@ function do_tiaozhan() {
 
 // 模拟随机时间15-20秒，后期可以用户自定义
 function ran_sleep1() {
-return sleep(random(15000, 20000));
+return sleep(random(3000, 5000));
 }
 
 /********双人、四人赛*********/
