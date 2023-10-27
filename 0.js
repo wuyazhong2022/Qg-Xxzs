@@ -122,7 +122,7 @@ sleep(delay_time);
 var storage = storages.create('songgedodo');
 // 脚本版本号
 var last_version = "V12.0";
-var engine_version = "V12.6";
+var engine_version = "V12.7";
 var newest_version = "V12.7";
 if (storage.get(engine_version, true)) {
     storage.remove(last_version);
