@@ -329,7 +329,7 @@ ui.emitter.on("options_item_selected", (e, item) => {
             alert("关于", "学习助手 v" + latest_version);
             break;
         case "留言私信":
-            app.openUrl("https://www.jiebeih.top/1251.html");
+            app.openUrl("https://www.jiebeih.top/author/1");
             break;
         
     }
