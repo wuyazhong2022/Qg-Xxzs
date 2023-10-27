@@ -126,7 +126,7 @@ var engine_version = "V12.6";
 var newest_version = "V12.6";
 if (storage.get(engine_version, true)) {
     storage.remove(last_version);
-        let gengxin_rows = "脚本有风险，仅供学习交流;更新内容：1.趣味答题已修复，点击答案随机延时缩短了；2.私信https://www.jiebeih.top/author/1 ;3.脚本测试环境：强国V2.46.0；（点击取消不再提示）".split(";");
+        let gengxin_rows = "脚本有风险，仅供学习交流;更新内容：1.学习强国请更新到最新v2.50版使用，2.每天、趣味答题已修复，可能还有bug；2.有问题可以私信留言https://www.jiebeih.top/author/1 ;3.脚本测试环境：强国V2.5.0；（点击取消不再提示）".split(";");
     let is_show = confirm(engine_version + "版更新内容", gengxin_rows.join("\n"));
     if (!is_show) {
         storage.put(engine_version, false);
