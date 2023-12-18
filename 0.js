@@ -1,4 +1,4 @@
-logauto.waitFor(); //mode = "fast"
+auto.waitFor(); //mode = "fast"
 var delay_time = 3000;
 device.wakeUpIfNeeded();
 
