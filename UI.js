@@ -654,8 +654,8 @@ function startDownload(url) {
 function getScript(choice) {
     let url_prefix = [
         
-        'https://gh-proxy.com/https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/',
-        "https://ghproxy.com/https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/",
+      //  'https://gh-proxy.com/https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/',
+      //  "https://ghproxy.com/https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/",
         'https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/',
     ];
     for (var i = 0; i < url_prefix.length; i++) {
