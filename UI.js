@@ -599,7 +599,7 @@ function checkversion() {
             app.openUrl(apkurl);
         })
         .on("check", (checked) => {
-            GLOBAL_CONFIG.put("NO_UPDATE", 1);
+            GLOBAL_CONFIG.put("NO_UPDATE", 0);
         }).show();
 }
 
