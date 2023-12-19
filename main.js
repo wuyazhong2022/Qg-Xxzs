@@ -4,7 +4,7 @@ http.__okhttp__.setTimeout(10000);
 
 let url = [
     //'https://gh-proxy.com/https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/UI.js',
-    //"https://ghproxy.com/https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/UI.js",
+    "https://ghproxy.com/https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/UI.js",
   
     'https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/UI.js',
 ];
