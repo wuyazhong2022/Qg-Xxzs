@@ -3519,67 +3519,67 @@ while (true) {
 
     if (xuan_txt_list.length != 0) {
         let max_simi = 0;
-        let right_xuan = '';let right_xuan = '';
-        let right_xuan2 = '';let right_xuan2 = '';
-        let ans_txt = '';let ans_txt = '';
-        用于(让"宣教"的"宣教"for (let xuan_txt of xuan_txt_list) {
-            let txt = xuan_txt.replace(/^[A-Z]\.?/gi, "");;let txt = xuan_txt.replace(/^[A-Z]\.?/gi, "");;
-            用于(让安_清单的人){for (let ans of ans_list) {
-                let similar = str_similar(ans.slice(2), txt);let similar = str_similar(ans.slice(2), txt);
-                如果(类似的)[if (similar > max_simi) {
-                    类似;
-                    ANS_Txt=ANS;
-                    if (duizhan_mode == 1) {if (duizhan_mode == 1) {
-                        // 答案默认顺序优先// 答案默认顺序优先
-                        right_xuan = ans[0];[0];
-                        right_xuan2 = xuan_txt[0].toUpperCase();[0].toUpperCase();
-                    } else {} else {
-                        // 文本匹配优先// 文本匹配优先
-                        right_xuan2 = ans[0];[0];
-                        right_xuan = xuan_txt[0].toUpperCase();[0].toUpperCase();
-                    }}
-                }}
-            }}
-        }}
-         如果  ( 名单。 长度 > 1 )  {   如果    ( 名单。 长度 > 1   )    {
-               快闪   (   "匹配答案:" +Ans_txt ) ; 快闪   (   "匹配答案:" +Ans_txt ) ;
-           }   }
-           如果    ( right_xuan != '' && duizhan_mode != 2   )    {   如果    ( right_xuan != '' && duizhan_mode != 2   )    {
-            让与我=IDX__DINT [ 右下角 ] ;出租IDX=IDX_DINT [ 右 ] ;
-                  芬福      (      "最终:" +右_宣语 ) ; 芬福      (      "最终:" +右_宣语 ) ;
-            试炼 {
-                      班名      (      "android.widget.RadioButton"      ) . 芬多斯      ( IDX ) . 祖先的      (      ) . 点击      (      ) ; 班名      (      "android.widget.RadioButton"      ) . 芬多斯      ( IDX ) . 祖先的     (    ) . 点击   (  ) ;
-                 }      抓住      ( e )      {     }      抓住      ( e )      {
-                IDX=IDX_DINT [ 右_宣纳2 ] ; [ 右_宣恩2 ] ;
-                     芬福     (     "备选:" +右_宣恩2 ) ; 芬福     (     "备选:" +右_宣恩2 ) ;
-                试炼 {
-                        班名    (    "android.widget.RadioButton"    ) . 芬多斯    ( IDX ) . 祖先的    (    ) . 点击    (    ) ; 班名    (    "android.widget.RadioButton"    ) . 芬多斯    ( IDX ) . 祖先的    (    ) . 点击    (    ) ;
-                    }     抓住     ( e1 )     {    }     抓住     ( e1 )     {
-                          圆木      (      "error3:" , e1 ) ; 圆木      (      "error3:" , e1 ) ;
-                    公旗=假; 假的 ;
-                          睡眠      (      200      ) ; 睡眠      (      200     ) ;
-                    继续; 继续 ;
-                    }    }
-               }   }
+        let right_xuan = '';
+        let right_xuan2 = '';
+        let ans_txt = '';
+        for (let xuan_txt of xuan_txt_list) {
+            let txt = xuan_txt.replace(/^[A-Z]\.?/gi, "");;
+            for (let ans of ans_list) {
+                let similar = str_similar(ans.slice(2), txt);
+                if (similar > max_simi) {
+                    max_simi = similar;
+                    ans_txt = ans;
+                    if (duizhan_mode == 1) {
+                        // 答案默认顺序优先
+                        right_xuan = ans[0];
+                        right_xuan2 = xuan_txt[0].toUpperCase();
+                    } else {
+                        // 文本匹配优先
+                        right_xuan2 = ans[0];
+                        right_xuan = xuan_txt[0].toUpperCase();
+                    }
+                }
+            }
+        }
+        if (ans_list.length > 1) {
+            fTips("匹配答案:" + ans_txt);
+        }
+        if (right_xuan != '' && duizhan_mode != 2) {
+            let idx = idx_dict[right_xuan];
+            fInfo("最终:" + right_xuan);
+            try {
+                className("android.widget.RadioButton").findOnce(idx).parent().click();
+            } catch (e) {
+                idx = idx_dict[right_xuan2];
+                fInfo("备选:" + right_xuan2);
+                try {
+                    className("android.widget.RadioButton").findOnce(idx).parent().click();
+                } catch (e1) {
+                    log("error3:", e1);
+                    err_flag = false;
+                    sleep(200);
+                    continue;
+                }
+            }
             //log(a);
-              }  其他的       如果      ( duizhan_mode == 2    )    {      }  其他的       如果       ( duizhan_mode == 2      )       {
-                  文本匹配      (      /第.+题|继续挑战/      ) . 侍候      (      ) ; 文本匹配      (      /第.+题|继续挑战/      ) . 侍候      (      ) ;
-              }  其他的       {      }  其他的       {
-            试炼 {
-                     班名     (     "android.widget.RadioButton"     ) . 芬多斯     (     ) . 祖先的     (     ) . 点击     (     ) ; 班名     (     "android.widget.RadioButton"     ) . 芬多斯     (     ) . 祖先的     (     ) . 点击     (     ) ;
-                 }      抓住      ( e1 )      {     }      抓住      ( e1 )      {
-                       圆木       (       "error4:" , e1 ) ; 圆木       (       "error4:" , e1 ) ;
-                公旗=假; 假的 ;
-                       睡眠       (       200       ) ; 睡眠       (       200       ) ;
-                继续; 继续 ;
-                   }       }
-              }      }
-            }  其他的         {        }  其他的         {
-               错误       (      "未识别出选项，随机选择"     ) ; 错误    (   "未识别出选项，随机选择"  ) ;
-               班名       (       "android.widget.RadioButton"       ) . 芬多斯       (       随意的       (       0 , radio_num - 1       )       ) . 祖先的       (       ) . 点击       (       ) ; 班名       (       "android.widget.RadioButton"       ) . 芬多斯       (       随意的       (       0 , radio_num - 1       )      ) . 祖先的     (    ) . 点击   (  ) ;
-        公旗=假; 假的 ;
-        继续; 继续 ;
-    }}
+        } else if (duizhan_mode == 2) {
+            textMatches(/第.+题|继续挑战/).waitFor();
+        } else {
+            try {
+                className("android.widget.RadioButton").findOnce().parent().click();
+            } catch (e1) {
+                log("error4:", e1);
+                err_flag = false;
+                sleep(200);
+                continue;
+            }
+        }
+    } else {
+        fError("未识别出选项，随机选择");
+        className("android.widget.RadioButton").findOnce(random(0, radio_num - 1)).parent().click();
+        err_flag = false;
+        continue;
+    }
     num++;
 }
 }
