@@ -404,7 +404,7 @@ ui.log.click(function () {
 // APP更新检测
 ui.update.click(function () {
     if (app.versionName != latest_version) {
-        GLOBAL_CONFIG.put("NO_UPDATE", 0);
+        GLOBAL_CONFIG.put("NO_UPDATE", 1);
         checkversion();
     } else {
         toast("当前已经是最新版本！");
@@ -653,7 +653,7 @@ function startDownload(url) {
 
 function getScript(choice) {
     let url_prefix = [
-      // 'https://gh.api.99988866.xyz/https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/',
+      'https://hub.gitmirror.com//https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/',
     'https://raw.gitmirror.com/wuyazhong2022/Qg-Xxzs/main/',
     'https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/',
     ];
