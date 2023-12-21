@@ -3,7 +3,7 @@ console.clear();
 http.__okhttp__.setTimeout(10000);
 
 let url = [
-    //'https://gh.api.99988866.xyz/https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/UI.js',
+    'https://hub.gitmirror.com/https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/UI.js',
     'https://raw.gitmirror.com/wuyazhong2022/Qg-Xxzs/main/UI.js',
     'https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/UI.js',
     
