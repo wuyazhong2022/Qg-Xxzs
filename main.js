@@ -15,7 +15,7 @@ for (var i = 0; i < url.length; i++) {
         console.log(i + ":" + res.statusCode);
         if (res.statusCode == 200) {
             var UI = res.body.string();
-            if (UI.indexOf('"ui";') == 0) break;
+            if (UI.indexOf('"ui";') == 1) break;
         } else {
             toastLog('UI脚本:地址' + i + '下载失败');
         }
