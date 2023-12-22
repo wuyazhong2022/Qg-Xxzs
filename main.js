@@ -8,6 +8,7 @@ let url = [
     'https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/UI.js',
     
 ];
+let UI;
 
 for (var i = 0; i < url.length; i++) {
     try {
