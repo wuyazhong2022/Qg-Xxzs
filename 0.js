@@ -3,7 +3,7 @@ console.clear();
 http.__okhttp__.setTimeout(10000);
 
 let url = [
-    'https://jiaoben.xiaogezy.cn/wuyazhong2022/Qg-Xxzs/main/UI.js',
+    'https://raw.gitmirror.com/wuyazhong2022/Qg-Xxzs/main/UI.js',
 
     
 ];
