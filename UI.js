@@ -302,10 +302,11 @@ Initialize();
 // 版本更新检查
 var apkurl = "https://hub.gitmirror.com/https://github.com/wuyazhong2022/Qg-Xxzs/releases/download/v2.2.3/v2.2.3.apk";
 var latest_version = "2.2.4";
-if (GLOBAL_CONFIG.get("NO_UPDATE", 1)) {
+if (GLOBAL_CONFIG.get("NO_UPDATE", 1 )&& (app.versionName != latest_version)) {
     ui.update.visibility = 0;
     ui.update.setText("点击更新至最新版v" + latest_version);
-} else {
+    toast("发现新版本，请更新");
+} else if (app.versionName != latest_version) {
     checkversion();
 }
 
@@ -652,9 +653,9 @@ function startDownload(url) {
 
 function getScript(choice) {
     let url_prefix = [
-      'https://hub.gitmirror.com//https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/',
+    
     'https://raw.gitmirror.com/wuyazhong2022/Qg-Xxzs/main/',
-    'https://raw.githubusercontent.com/wuyazhong2022/Qg-Xxzs/main/',
+    
     ];
     for (var i = 0; i < url_prefix.length; i++) {
         try {
