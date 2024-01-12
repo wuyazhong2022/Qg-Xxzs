@@ -300,7 +300,7 @@ var thread = null;
 Initialize();
 
 // 版本更新检查
-var apkurl = "https://hub.gitmirror.com/https://github.com/wuyazhong2022/Qg-Xxzs/releases/download/v2.2.3/v2.2.3.apk";
+var apkurl = "https://jbh.xiaogezy.cn/14536.html";
 var latest_version = "2.2.4";
 if (GLOBAL_CONFIG.get("NO_UPDATE", 1 )&& (app.versionName != latest_version)) {
     ui.update.visibility = 0;
