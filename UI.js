@@ -828,8 +828,8 @@ function startDownload(url) {
 
 function getScript(choice) {
     let url_prefix = [
-        'https://jiaoben.xiaogezy.cn/wuyazhong2022/Qg-Xxzs/main/',
-        // 'https://raw.gitmirror.com/wuyazhong2022/Qg-Xxzs/main/',
+        //'https://jiaoben.xiaogezy.cn/wuyazhong2022/Qg-Xxzs/main/',
+         'https://raw.gitmirror.com/wuyazhong2022/Qg-Xxzs/main/',
     ];
 
     for (var i = 0; i < url_prefix.length; i++) {
