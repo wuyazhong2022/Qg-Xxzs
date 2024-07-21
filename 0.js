@@ -44,7 +44,7 @@ var rc4key = "Ge9TfPfr4FT9z15Z"; //RC4-2密钥
 
 // //--------------------------------------------------------------//
 var sbm = device.getAndroidId(); //获取应用设备码
-login1()
+//login1()
 function login1() {
     var text = TTXS_PRO_CONFIG.get("pushplus1", "");
     var data = rc4_2(text, "kmlogon");
