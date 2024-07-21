@@ -37,10 +37,7 @@ var comment = TTXS_PRO_CONFIG.get("comment", "为人民服务|共同发展，加
 let MLKitOCR = $plugins.load('org.autojs.autojspro.plugin.mlkit.ocr');
 let ocr = new MLKitOCR();
 
-var url = "http://zcyx.xiaogezy.cn/"; //api请求域名
-var appid = "10002"; //应用id
-var keymy = "5344UzzvFg3zBFxY"; //应用密钥
-var rc4key = "Ge9TfPfr4FT9z15Z"; //RC4-2密钥
+
 
 // //--------------------------------------------------------------//
 var sbm = device.getAndroidId(); //获取应用设备码
